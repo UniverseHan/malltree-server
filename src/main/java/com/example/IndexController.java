@@ -9,5 +9,4 @@ public class IndexController {
 	public String index(){
 		return "<h1>hello STS index!!!</h1>";		
 	}
-
 }
