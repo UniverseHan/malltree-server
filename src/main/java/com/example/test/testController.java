@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class testController {
 
     //GET방식
-    private static final String template = "Hello, %s!";
+    private static final String template = "http://test12.dothome.co.kr/images/%s";
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/test")
     public test greeting(
-    		@RequestParam(value="name", defaultValue="World") String name,
+    		@RequestParam(value="name", defaultValue="on.png") String name,
     		@RequestParam(value="age", defaultValue="20") Integer age) 
     {
         return new test(

@@ -2,7 +2,6 @@ package com.example.test;
 
 public class test {
 
-
     private final long id;
     private final String content;
     private final int age;
