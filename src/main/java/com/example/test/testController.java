@@ -17,40 +17,41 @@ public class testController {
   private static final String template = "http://test12.dothome.co.kr/images/%s";
   private final AtomicLong counter = new AtomicLong();
   
-  //Array
-  ArrayList<Item> items = new ArrayList<Item>();
 
   @RequestMapping("/test")
   public test greeting(
-      @RequestParam(value="name", defaultValue="on.png") String name,
-      @RequestParam(value="age", defaultValue="20") Integer age) 
+      @RequestParam(value="content", defaultValue="on.png") String content,
+      @RequestParam(value="age", defaultValue="20") Integer age)
   {
     return new test(
         counter.incrementAndGet(),
-        String.format(template, name),
+        String.format(template, content),
         age);
   }
-  
-  @RequestMapping("/items")
-  public List<Item> getItemList() {
-    return items;
-  }
 
 
-  //POST방식
-  @PostMapping(path = "/test", consumes = "application/json")
+  //POST방식 
+  @PostMapping(path = "/get-items", consumes = "application/json")
   public String post(@RequestBody AddItemRequest request) {
-    // implementation omitted
+    // implementation omitted    
     
-    
-    items.add( new Item(request.getName(), request.getPrice()));
+    items.add( new Item(request.getName(), request.getPrice()) );
     
     System.out.println("number of items is " + items.size());
 
     //Array에 입력
-    return "(Name) : " + request.getName() + "   (age) : " + request.getPrice();
-
+    return "(Name) : " + request.getName() + "   (price) : " + request.getPrice();
   }
+  
+
+  //Array
+  ArrayList<Item> items = new ArrayList<Item>();
+  
+  @RequestMapping("/list-items")
+  public List<Item> getItemList() {
+    return items;
+  }
+  
 
 }
 
