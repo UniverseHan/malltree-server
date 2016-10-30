@@ -1,4 +1,4 @@
-package com.example.test;
+package com.malltree.test;
 
 public class AddItemRequest {
   private String name;

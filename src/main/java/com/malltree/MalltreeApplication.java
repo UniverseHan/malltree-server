@@ -1,11 +1,12 @@
-package com.example;
+package com.malltree;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StsDemoApplication {
+public class MalltreeApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(StsDemoApplication.class, args);
+		SpringApplication.run(MalltreeApplication.class, args);
 	}
+
 }
